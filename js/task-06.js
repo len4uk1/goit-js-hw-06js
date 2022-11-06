@@ -1,12 +1,13 @@
-const inputEl = document.querySelector("#validation-input");
-const onCheckInputContent = (event) => {  
-    event.currentTarget.classList.remove('invalid');
-    if (
-        event.currentTarget.value.trim().length <
-        event.currentTarget.dataset.length
-    ) {
-        event.currentTarget.classList.add('invalid');
+function addRemoveStyle(remove, add) {
+    textInput.classList.remove(remove);
+    textInput.classList.add(add);
+}
+
+textInput.addEventListener('blur', onInputBlur)
+
+function onInputBlur (event) {
+    if (event.currentTarget.value.length === verifyInput) {
+        addRemoveStyle('invalid', 'valid')
     }
-      event.currentTarget.classList.add('valid');
-};
-inputEl.addEventListener("blur", onCheckInputContent);
+    else {addRemoveStyle('valid', 'invalid')}
+}
