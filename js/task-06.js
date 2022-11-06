@@ -1,3 +1,8 @@
+const textInput = document.querySelector('#validation-input');
+const verifyInput = Number(textInput.getAttribute('data-length'));
+console.log(verifyInput);
+
+
 function addRemoveStyle(remove, add) {
     textInput.classList.remove(remove);
     textInput.classList.add(add);
